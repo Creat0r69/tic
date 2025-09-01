@@ -14,507 +14,808 @@
         });
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+        .video-container {
+            display: flex; justify-content: center; align-items: center;
+            padding: 8px; background: #fff;
+        }
+        #modal-video-el { width: 100%; max-width: 900px; height: auto; border-radius: 6px; }
+
+        .modal-nostalgia {
+            background: #f4f0e1; /* beige retro background */
+            border: 2px solid #000080;
+            width: 800px; /* fixed width, not full screen */
+            height: 55%;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+            color: black;
+        }
+
+        .modal-pac {
+            background: #f4f0e1; /* beige retro background */
+            border: 2px solid #000080;
+            width: 380px; /* fixed width, not full screen */
+            height: 45%;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+            color: black;
+        }
+
+        .modal-chat {
+            background: #f4f0e1; /* beige retro background */
+            border: 2px solid #000080;
+            width: 500px; /* fixed width, not full screen */
+            height: 47%;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+            color: black;
+        }
+
+        .modal-nostalgia .modal-header {
+            background: #0055cc;
+            color: white;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-nostalgia .modal-header h4 {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0;
+            text-transform: lowercase;
+        }
+
+        .modal-nostalgia .modal-body {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .modal-nostalgia .about-left {
+            width: 60%;
+        }
+
+        .modal-nostalgia .about-right {
+            width: 50%;
+            text-align: left;
+        }
+
+        .modal-nostalgia .social-logo {
+            width: 70px;
+            margin: 10px 0;
+        }
+
+        .modal-nostalgia .retro-pc {
+            width: 350px;
+            image-rendering: pixelated;
+        }
+
+        .modal-nostalgia .buy-link {
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 13px;
+        }
+
+        .modal-nostalgia .ca {
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+    </style>
 </head>
 
 <body>
-    <div id="desktop">
-        <!-- LINHA 1 -->
-        <div class="celula-disponivel td" id="1">
-            <div draggable="true" class="teste" id="meu-computador-id">
-                <a href="#meu-computador" onclick="adicionar_elemento_barra_de_tarefas(1)">
-                    <img src="./img/folder.png" alt="">
-                    <p>Memes</p>
-                </a>
-            </div>
+<div id="desktop">
+    <!-- LINHA 1 -->
+    <div class="celula-disponivel td" id="1">
+        <div draggable="true" class="teste" id="meu-computador-id">
+            <a href="#meu-computador" onclick="adicionar_elemento_barra_de_tarefas(1)">
+                <img src="./img/folder.png" alt="">
+                <p>Memes</p>
+            </a>
         </div>
-        <div class="celula-disponivel td" id="2"></div>
-        <div class="celula-disponivel td" id="3"></div>
-        <div class="celula-disponivel td" id="4"></div>
-        <div class="celula-disponivel td" id="5"></div>
-        <div class="celula-disponivel td" id="6"></div>
-        <div class="celula-disponivel td" id="7"></div>
-        <div class="celula-disponivel td" id="8"></div>
-        <div class="celula-disponivel td" id="9"></div>
-        <div class="celula-disponivel td" id="10"></div>
-        <div class="celula-disponivel td" id="11"></div>
-        <div class="celula-disponivel td" id="12"></div>
-        <div class="celula-disponivel td" id="13"></div>
-
-        <!-- LINHA 2 -->
-        <div class="celula-disponivel td" id="14">
-            <div draggable="true" id="calculadora-id">
-                <a href="#calculadora" onclick="adicionar_elemento_barra_de_tarefas(2)">
-                    <img src="./img/calc.ico" alt="">
-                    <p>Calculator</p>
-                </a>
-            </div>
+    </div>
+    <div class="celula-disponivel td" id="2">
+        <div draggable="true" id="a">
+            <a href="#pacman" onclick="">
+                <img src="./img/pac.png" alt="">
+                <p>PacMan</p>
+            </a>
         </div>
-        <div class="celula-disponivel td" id="15"></div>
-        <div class="celula-disponivel td" id="16"></div>
-        <div class="celula-disponivel td" id="17"></div>
-        <div class="celula-disponivel td" id="18"></div>
-        <div class="celula-disponivel td" id="19"></div>
-        <div class="celula-disponivel td" id="20"></div>
-        <div class="celula-disponivel td" id="21"></div>
-        <div class="celula-disponivel td" id="22"></div>
-        <div class="celula-disponivel td" id="23"></div>
-        <div class="celula-disponivel td" id="24"></div>
-        <div class="celula-disponivel td" id="25"></div>
-        <div class="celula-disponivel td" id="26"></div>
-
-        <!-- LINHA 3 -->
-
-        <div class="celula-disponivel td" id="28"></div>
-        <div class="celula-disponivel td" id="29"></div>
-        <div class="celula-disponivel td" id="30"></div>
-        <div class="celula-disponivel td" id="31"></div>
-        <div class="celula-disponivel td" id="32"></div>
-        <div class="celula-disponivel td" id="33"></div>
-        <div class="celula-disponivel td" id="34"></div>
-        <div class="celula-disponivel td" id="35"></div>
-        <div class="celula-disponivel td" id="36"></div>
-        <div class="celula-disponivel td" id="37"></div>
-        <div class="celula-disponivel td" id="38"></div>
-        <div class="celula-disponivel td" id="39"></div>
-
-        <!-- LINHA 4 -->
-        <div class="celula-disponivel td" id="40">
-            <div draggable="true" id="pong-id">
-                <a href="#pong" onclick="inserir_pong(), adicionar_elemento_barra_de_tarefas(4)">
-                    <img src="./img/pong-logo.png" alt="">
-                    <p>Pong</p>
-                </a>
-            </div>
-        </div>
-        <div class="celula-disponivel td" id="41"></div>
-        <div class="celula-disponivel td" id="42"></div>
-        <div class="celula-disponivel td" id="43"></div>
-        <div class="celula-disponivel td" id="44"></div>
-        <div class="celula-disponivel td" id="45"></div>
-        <div class="celula-disponivel td" id="46"></div>
-        <div class="celula-disponivel td" id="47"></div>
-        <div class="celula-disponivel td" id="48"></div>
-        <div class="celula-disponivel td" id="49"></div>
-        <div class="celula-disponivel td" id="50"></div>
-        <div class="celula-disponivel td" id="51"></div>
-        <div class="celula-disponivel td" id="52"></div>
-
-        <!-- LINHA 5  -->
-        <div class="celula-disponivel td" id="53">
-            <div draggable="true" id="chrome-id">
-                <a href="#chrome" onclick="adicionar_elemento_barra_de_tarefas(5)">
-                    <img src="./img/Google_Chrome_icon.png" alt="">
-                    <p>Chrome</p>
-                </a>
-            </div>
-        </div>
-        <div class="celula-disponivel td" id="54"></div>
-        <div class="celula-disponivel td" id="55"></div>
-        <div class="celula-disponivel td" id="56"></div>
-        <div class="celula-disponivel td" id="57"></div>
-        <div class="celula-disponivel td" id="58"></div>
-        <div class="celula-disponivel td" id="59"></div>
-        <div class="celula-disponivel td" id="60"></div>
-        <div class="celula-disponivel td" id="61"></div>
-        <div class="celula-disponivel td" id="62"></div>
-        <div class="celula-disponivel td" id="63"></div>
-        <div class="celula-disponivel td" id="64"></div>
-        <div class="celula-disponivel td" id="65"></div>
-
-        <!-- LINHA 6 -->
-        <div class="celula-disponivel td" id="66">
-            <div draggable="true" id="paint-id">
-                <a href="#paint" onclick="adicionar_elemento_barra_de_tarefas(6)">
-                    <img src="./img/Paint.png" alt="">
-                    <p>Paint</p>
-                </a>
-            </div>
-        </div>
-        <div class="celula-disponivel td" id="67"></div>
-        <div class="celula-disponivel td" id="68"></div>
-        <div class="celula-disponivel td" id="69"></div>
-        <div class="celula-disponivel td" id="70"></div>
-        <div class="celula-disponivel td" id="71"></div>
-        <div class="celula-disponivel td" id="72"></div>
-        <div class="celula-disponivel td" id="73"></div>
-        <div class="celula-disponivel td" id="74"></div>
-        <div class="celula-disponivel td" id="75"></div>
-        <div class="celula-disponivel td" id="76"></div>
-        <div class="celula-disponivel td" id="77"></div>
-        <div class="celula-disponivel td" id="78"></div>
     </div>
 
+    <div class="celula-disponivel td" id="3"></div>
+    <div class="celula-disponivel td" id="4"></div>
+    <div class="celula-disponivel td" id="5"></div>
+    <div class="celula-disponivel td" id="6"></div>
+    <div class="celula-disponivel td" id="7"></div>
+    <div class="celula-disponivel td" id="8"></div>
+    <div class="celula-disponivel td" id="9"></div>
+    <div class="celula-disponivel td" id="10"></div>
+    <div class="celula-disponivel td" id="11"></div>
+    <div class="celula-disponivel td" id="12"></div>
+    <div class="celula-disponivel td" id="13"></div>
 
+    <!-- LINHA 2 -->
+    <div class="celula-disponivel td" id="14">
+        <div draggable="true" id="calculadora-id">
+            <a href="#calculadora" onclick="adicionar_elemento_barra_de_tarefas(2)">
+                <img src="./img/calc.ico" alt="">
+                <p>Calculator</p>
+            </a>
+        </div>
+    </div>
+    <div class="celula-disponivel td" id="15">
+        <div draggable="true" id="z">
+            <a href="#chat" onclick="">
+                <img src="./img/CHAT.png" alt="">
+                <p>PacMan</p>
+            </a>
+        </div>
+    </div>
+    <div class="celula-disponivel td" id="16"></div>
+    <div class="celula-disponivel td" id="17"></div>
+    <div class="celula-disponivel td" id="18"></div>
+    <div class="celula-disponivel td" id="19"></div>
+    <div class="celula-disponivel td" id="20"></div>
+    <div class="celula-disponivel td" id="21"></div>
+    <div class="celula-disponivel td" id="22"></div>
+    <div class="celula-disponivel td" id="23"></div>
+    <div class="celula-disponivel td" id="24"></div>
+    <div class="celula-disponivel td" id="25"></div>
+    <div class="celula-disponivel td" id="26"></div>
 
-    <!-- MODALS -->
-    <!-- MODAL - PASTA: MEU COMPUTADOR -->
-    <div id="meu-computador" class="modal">
-        <div class="modal-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
+    <!-- LINHA 3 -->
+    <div class="celula-disponivel td" id="27">
+        <div draggable="true" id="">
+            <a href="#about" onclick="">
                 <img src="./img/Monitor.ico" alt="">
-                <h4 style="font-size: var(--16px);" ;>MEMES</h4>
-            </div>
-            <div class="header-botoes">
-                <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
-                <a href="#"><img src="./img/botao-maximizar.png" alt=""></a>
-                <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()"><img src="./img/botao-fechar.png" alt=""></a>
-            </div>
-        </div>
-        <ul style="display: flex; gap: 5px; background-color: #F1EFE1; border-bottom: 2px solid #DEDED2;font-size: var(--16px); height: 4.1vh;">
-            <li><ins>F</ins>ile</li>
-            <li>E<ins>d</ins>it</li>
-            <li>V<ins>i</ins>ew</li>
-            <li>F<ins>a</ins>vorites</li>
-            <li>T<ins>o</ins>ols</li>
-            <li>H<ins>e</ins>lp</li>
-            <img style="background-color: #ffffff; padding: 0 10px; margin-left: auto;" class="imagem-media" src="./img/logo windows.png" alt="">
-        </ul>
-        <div>
-            <ul id="navegacao">
-                <li><img class="imagem-media" src="./img/Back.png" alt=""></li>
-                <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
-                <li><img class="imagem-media" src="./img/Forward.png" alt=""></li>
-                <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
-                <li><img class="imagem-media" src="./img/Up.png" alt=""></li>
-                <li><img class="imagem-media" src="./img/pesquisar.ico" alt=""></li>
-                <li><img class="imagem-media" src="./img/pastas-abertas.png" alt=""></li>
-                <li><img class="imagem-media" src="./img/Icon View.png" alt=""></li>
-                <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
-            </ul>
-            <div id="meu-pc-endereco">
-                <h4 style="font-size: var(--16px);font-weight: normal;">A<ins>d</ins>dress</h4>
-                <div id="endereco-link">
-                    <p>Memes</p>
-                    <img src="./img/seta-pra-baixo.svg" alt="">
-                </div>
-                <div id="endereco-ir">
-                    <p>Ir</p>
-                </div>
-            </div>
-            <div id="meu-pc-grid">
-                <section id="meu-pc-grid-1">
-                    <ul class="atalhos-sections">
-                        <li class="atalhos-header">
-                            <h2>System Tasks</h2>
-                            <img width="20" src="./img/setas-duplas.svg" alt="">
-                        </li>
-
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/253.ico" alt="">
-                            <p>View system information</p>
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/Programs.png" alt="">
-                            <p>Add or remove programs
-                            </p>
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/painel-de-controle.ico" alt="">
-                            <p>Change a setting</p>
-                        </li>
-                    </ul>
-                    <ul class="atalhos-sections">
-                        <li class="atalhos-header">
-                            <h2>Other Places</h2>
-                            <img width="20" src="./img/setas-duplas.svg" alt="">
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/locais-de-rede.ico" alt="">
-                            <p>My Network Places</p>
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/meus-documentos.ico" alt="">
-                            <p>My Documents</p>
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/Folder Closed.ico" alt="">
-                            <p>Shared Documents
-                            </p>
-                        </li>
-                        <li class="atalhos-pastas">
-                            <img class="mini-imagens" src="./img/painel-de-controle.ico" alt="">
-                            <p>Control Panel</p>
-                        </li>
-                    </ul>
-                    <ul class="atalhos-sections">
-                        <li class="atalhos-header">
-                            <h2>Details</h2>
-                            <img class="" width="20" src="./img/setas-duplas.svg" alt="">
-                        </li>
-                        <li>
-                            <h2>My Computer</h2>
-                            <p>System Folder</p>
-                        </li>
-                    </ul>
-                </section>
-                <section id="meu-pc-grid-2">
-                    <div class="meu-pc-topicos">
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/2.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/1.png', 'cult.jpg')">
-                            <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/3.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/4.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/5.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/6.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/7.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/8.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/9.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/10.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                        <div class="meu-pc-itens">
-                            <a href="#modal-imagens" onclick="abrirModal('./img/11.png', 'cult.jpg')">
-                                <img class="imagem-grande" src="./img/JPG.png" alt="">
-                            </a>
-                            <p>cult.jpg</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                <p>About Us</p>
+            </a>
         </div>
     </div>
 
-    <div id="modal-imagens" class="modal">
-        <div class="modal-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
-                <img src="./img/JPG.png" alt="">
-                <h4 id="modal-title">gatos.jpg - Visualizador de imagens</h4>
-            </div>
-            <div class="header-botoes">
-                <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
-                <a href="#"><img src="./img/botao-maximizar.png" alt=""></a>
-                <a href="#fechar"
-                   title="Fechar"
-                   class="fechar"
-                   id="botao-fechar-imagem-gato"
-                   onclick="retirar_elemento_barra_de_tarefas()">
-                    <img src="./img/botao-fechar.png" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="img-gato">
-            <img src="/img/2.png" alt="" id="modal-image">
-        </div>
-    </div>
+    <div class="celula-disponivel td" id="28"></div>
+    <div class="celula-disponivel td" id="29"></div>
+    <div class="celula-disponivel td" id="30"></div>
+    <div class="celula-disponivel td" id="31"></div>
+    <div class="celula-disponivel td" id="32"></div>
+    <div class="celula-disponivel td" id="33"></div>
+    <div class="celula-disponivel td" id="34"></div>
+    <div class="celula-disponivel td" id="35"></div>
+    <div class="celula-disponivel td" id="36"></div>
+    <div class="celula-disponivel td" id="37"></div>
+    <div class="celula-disponivel td" id="38"></div>
+    <div class="celula-disponivel td" id="39"></div>
 
-
-    <!-- MODAL - JOGO: PONG -->
-    <div id="pong" class="modal">
-        <div class="modal-header pong-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
-                <img id="pong-logo" src="./img/pong-logo.png" alt="">
-                <h4>Pong</h4>
-            </div>
-            <div class="header-botoes">
-                <a href="/">
-                    <img src="./img/botao-minimizar.png" alt="">
-                </a>
-                <a>
-                    <img src="./img/botao-maximizar-disabled.png" alt="">
-                </a>
-                <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_pong(), retirar_elemento_barra_de_tarefas()">
-                    <img src="./img/botao-fechar.png" alt="">
-                </a>
-            </div>
+    <!-- LINHA 4 -->
+    <div class="celula-disponivel td" id="40">
+        <div draggable="true" id="pong-id">
+            <a href="#pong" onclick="inserir_pong(), adicionar_elemento_barra_de_tarefas(4)">
+                <img src="./img/pong-logo.png" alt="">
+                <p>Pong</p>
+            </a>
         </div>
     </div>
+    <div class="celula-disponivel td" id="41"></div>
+    <div class="celula-disponivel td" id="42"></div>
+    <div class="celula-disponivel td" id="43"></div>
+    <div class="celula-disponivel td" id="44"></div>
+    <div class="celula-disponivel td" id="45"></div>
+    <div class="celula-disponivel td" id="46"></div>
+    <div class="celula-disponivel td" id="47"></div>
+    <div class="celula-disponivel td" id="48"></div>
+    <div class="celula-disponivel td" id="49"></div>
+    <div class="celula-disponivel td" id="50"></div>
+    <div class="celula-disponivel td" id="51"></div>
+    <div class="celula-disponivel td" id="52"></div>
 
-    <!-- MODAL - PAINT -->
-    <div id="paint" class="modal">
-        <div class="modal-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
-                <img id="paint-logo" src="./img/Paint.png" alt="">
-                <h4>untitled - Paint</h4>
-            </div>
-            <div class="header-botoes">
-                <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
-                <a><img src="./img/botao-maximizar-disabled.png" alt=""></a>
-                <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()"><img src="./img/botao-fechar.png" alt=""></a>
-            </div>
-        </div>
-        <iframe src="paint/index.html" width="685" height="428"></iframe>
-    </div>
-
-    <!-- MODAL - CHROME -->
-    <div id="chrome" class="modal">
-        <div class="modal-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
+    <!-- LINHA 5  -->
+    <div class="celula-disponivel td" id="53">
+        <div draggable="true" id="chrome-id">
+            <a href="#chrome" onclick="adicionar_elemento_barra_de_tarefas(5)">
                 <img src="./img/Google_Chrome_icon.png" alt="">
-                <h4>Google Chrome</h4>
+                <p>Chrome</p>
+            </a>
+        </div>
+    </div>
+    <div class="celula-disponivel td" id="54"></div>
+    <div class="celula-disponivel td" id="55"></div>
+    <div class="celula-disponivel td" id="56"></div>
+    <div class="celula-disponivel td" id="57"></div>
+    <div class="celula-disponivel td" id="58"></div>
+    <div class="celula-disponivel td" id="59"></div>
+    <div class="celula-disponivel td" id="60"></div>
+    <div class="celula-disponivel td" id="61"></div>
+    <div class="celula-disponivel td" id="62"></div>
+    <div class="celula-disponivel td" id="63"></div>
+    <div class="celula-disponivel td" id="64"></div>
+    <div class="celula-disponivel td" id="65"></div>
+
+    <!-- LINHA 6 -->
+    <div class="celula-disponivel td" id="66">
+        <div draggable="true" id="paint-id">
+            <a href="#paint" onclick="adicionar_elemento_barra_de_tarefas(6)">
+                <img src="./img/Paint.png" alt="">
+                <p>Paint</p>
+            </a>
+        </div>
+    </div>
+    <div class="celula-disponivel td" id="67"></div>
+    <div class="celula-disponivel td" id="68"></div>
+    <div class="celula-disponivel td" id="69"></div>
+    <div class="celula-disponivel td" id="70"></div>
+    <div class="celula-disponivel td" id="71"></div>
+    <div class="celula-disponivel td" id="72"></div>
+    <div class="celula-disponivel td" id="73"></div>
+    <div class="celula-disponivel td" id="74"></div>
+    <div class="celula-disponivel td" id="75"></div>
+    <div class="celula-disponivel td" id="76"></div>
+    <div class="celula-disponivel td" id="77"></div>
+    <div class="celula-disponivel td" id="78"></div>
+
+</div>
+
+
+<!-- MODALS -->
+<!-- MODAL - PASTA: MEU COMPUTADOR -->
+<div id="meu-computador" class="modal">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img src="./img/Monitor.ico" alt="">
+            <h4 style="font-size: var(--16px);" ;>MEMES</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
+            <a href="#"><img src="./img/botao-maximizar.png" alt=""></a>
+            <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()"><img
+                    src="./img/botao-fechar.png" alt=""></a>
+        </div>
+    </div>
+    <ul style="display: flex; gap: 5px; background-color: #F1EFE1; border-bottom: 2px solid #DEDED2;font-size: var(--16px); height: 4.1vh;">
+        <li>
+            <ins>F</ins>
+            ile
+        </li>
+        <li>E
+            <ins>d</ins>
+            it
+        </li>
+        <li>V
+            <ins>i</ins>
+            ew
+        </li>
+        <li>F
+            <ins>a</ins>
+            vorites
+        </li>
+        <li>T
+            <ins>o</ins>
+            ols
+        </li>
+        <li>H
+            <ins>e</ins>
+            lp
+        </li>
+        <img style="background-color: #ffffff; padding: 0 10px; margin-left: auto;" class="imagem-media"
+             src="./img/logo windows.png" alt="">
+    </ul>
+    <div>
+        <ul id="navegacao">
+            <li><img class="imagem-media" src="./img/Back.png" alt=""></li>
+            <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
+            <li><img class="imagem-media" src="./img/Forward.png" alt=""></li>
+            <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
+            <li><img class="imagem-media" src="./img/Up.png" alt=""></li>
+            <li><img class="imagem-media" src="./img/pesquisar.ico" alt=""></li>
+            <li><img class="imagem-media" src="./img/pastas-abertas.png" alt=""></li>
+            <li><img class="imagem-media" src="./img/Icon View.png" alt=""></li>
+            <img style="margin: 5px; width: 0.6vw;" src="./img/seta-pra-baixo.svg" alt="">
+        </ul>
+        <div id="meu-pc-endereco">
+            <h4 style="font-size: var(--16px);font-weight: normal;">A
+                <ins>d</ins>
+                dress
+            </h4>
+            <div id="endereco-link">
+                <p>Memes</p>
+                <img src="./img/seta-pra-baixo.svg" alt="">
             </div>
-            <div class="header-botoes">
-                <a href="#">
-                    <img src="./img/botao-minimizar.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="./img/botao-maximizar.png" alt="">
-                </a>
-                <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()">
-                    <img src="./img/botao-fechar.png" alt="">
-                </a>
+            <div id="endereco-ir">
+                <p>Ir</p>
             </div>
         </div>
-        <iframe src="https://www.bing.com/?cc=br" width="1280" height="768"></iframe>
-    </div>
+        <div id="meu-pc-grid">
+            <section id="meu-pc-grid-1">
+                <ul class="atalhos-sections">
+                    <li class="atalhos-header">
+                        <h2>System Tasks</h2>
+                        <img width="20" src="./img/setas-duplas.svg" alt="">
+                    </li>
 
-    <!-- MODAL - CALCULADORA -->
-    <!-- TEMPLATE MODAL -->
-    <div id="calculadora" class="modal">
-        <div class="modal-header">
-            <div style="width: 800px; display: flex; gap: 3px;">
-                <img id="calculadora-icone" src="./img/calc.ico" alt="">
-                <h4>Calculadora</h4>
-            </div>
-            <div class="header-botoes">
-                <a href="#">
-                    <img src="./img/botao-minimizar.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="./img/botao-maximizar-disabled.png" alt="">
-                </a>
-                <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()">
-                    <img src="./img/botao-fechar.png" alt="">
-                </a>
-            </div>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/253.ico" alt="">
+                        <p>View system information</p>
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/Programs.png" alt="">
+                        <p>Add or remove programs
+                        </p>
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/painel-de-controle.ico" alt="">
+                        <p>Change a setting</p>
+                    </li>
+                </ul>
+                <ul class="atalhos-sections">
+                    <li class="atalhos-header">
+                        <h2>Other Places</h2>
+                        <img width="20" src="./img/setas-duplas.svg" alt="">
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/locais-de-rede.ico" alt="">
+                        <p>My Network Places</p>
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/meus-documentos.ico" alt="">
+                        <p>My Documents</p>
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/Folder Closed.ico" alt="">
+                        <p>Shared Documents
+                        </p>
+                    </li>
+                    <li class="atalhos-pastas">
+                        <img class="mini-imagens" src="./img/painel-de-controle.ico" alt="">
+                        <p>Control Panel</p>
+                    </li>
+                </ul>
+                <ul class="atalhos-sections">
+                    <li class="atalhos-header">
+                        <h2>Details</h2>
+                        <img class="" width="20" src="./img/setas-duplas.svg" alt="">
+                    </li>
+                    <li>
+                        <h2>My Computer</h2>
+                        <p>System Folder</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="meu-pc-grid-2">
+                <div class="meu-pc-topicos">
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/2.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/JPG.png" alt="">
+                        </a>
+                        <p>cult.jpg</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/3.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/JPG.png" alt="">
+                        </a>
+                        <p>cult.jpg</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/4.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/JPG.png" alt="">
+                        </a>
+                        <p>cult.jpg</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/5.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/JPG.png" alt="">
+                        </a>
+                        <p>cult.jpg</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/6.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/JPG.png" alt="">
+                        </a>
+                        <p>cult.jpg</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-video" onclick="openVideoModal('./img/chill.mp4', 'bonk.mp4')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>bonk.mp4</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/6.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>bonk.mp4</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/6.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>bonk.mp4</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-imagens" onclick="abrirModal('./img/6.png', 'cult.jpg')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>bonk.mp4</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <iframe src="./calculadora/index.html" width="240" height="316"></iframe>
     </div>
-    <script>
-        function abrirModal(imgSrc, fileName) {
-            // Update modal image
-            document.getElementById("modal-image").src = imgSrc;
+</div>
 
-            // Update modal title
-            document.getElementById("modal-title").innerText = fileName + " - Visualizador de imagens";
+<div id="modal-imagens" class="modal">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img src="./img/JPG.png" alt="">
+            <h4 id="modal-title">gatos.jpg - Image Viewer</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
+            <a href="#"><img src="./img/botao-maximizar.png" alt=""></a>
+            <a href="#fechar"
+               title="Fechar"
+               class="fechar"
+               id="botao-fechar-imagem-gato"
+               onclick="retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="img-gato">
+        <img src="/img/2.png" alt="" id="modal-image">
+    </div>
+</div>
+<div id="modal-video" class="modal" role="dialog" aria-labelledby="video-title" aria-hidden="true">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img src="./img/MP4.png" alt="">
+            <h4 id="video-title">video.mp4 - Video Player</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
+            <a href="#"><img src="./img/botao-maximizar.png" alt=""></a>
+            <a href="#fechar" title="Fechar" class="fechar" onclick="closeVideoModal()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video id="modal-video-el" controls preload="metadata" poster="./img/video-poster.png">
+            <source id="modal-video-source" src="/videos/sample.mp4" type="video/mp4">
+            Your browser doesn’t support HTML5 video.
+        </video>
+    </div>
+</div>
+
+
+<!-- MODAL - JOGO: PONG -->
+<div id="pong" class="modal">
+    <div class="modal-header pong-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img id="pong-logo" src="./img/pong-logo.png" alt="">
+            <h4>Pong</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="/">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a>
+                <img src="./img/botao-maximizar-disabled.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar"
+               onclick="retirar_pong(), retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="modal modal-nostalgia">
+    <!-- Header -->
+    <div class="modal-header">
+        <h4>Tokenized Internet Culture</h4>
+        <div class="header-botoes">
+            <a href="/">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a>
+                <img src="./img/botao-maximizar-disabled.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar"
+               onclick="retirar_pong(), retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+        <div class="about-left">
+            <p><b>about us:</b><br>
+                $SOL isn’t here to settle corporate debt swaps. It’s here to turn internet culture into tokens; fast,
+                cheap, viral.</p>
+            <br>
+            <p>Over 60% of Solana’s revenue is memecoins. The community already voted with their wallets: Solana =
+                memes.</p>
+            <br>
+            <p>
+                $TIC: Tokenized Internet Culture
+            </p>
+            <p>
+                The meme of all memes.
+            </p>
+            <p>
+                Built in @solana for @solana.
+            </p>
+            <p>
+                A ticker that captures the entire meta.
+
+            </p>
+            <p>
+                Solana is the chain of the meme.
+                $TIC is the token that proves it.
+            </p>
+            <p><b>Our Socials:</b></p>
+            <a href="https://x.com/home">
+                <img src="./img/x.png" alt="X Social Logo" class="social-logo">
+            </a>
+            <p class="ca">CA: 8FTr7tH5tQchcKSuurDXPS7t84uNpVuGuTqB8B5opump</p>
+        </div>
+
+        <div class="about-right">
+            <img src="./img/bg.jpg" alt="Retro Computer" class="retro-pc">
+            <p><a href="#" class="buy-link">Buy NOW!!</a></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="pacman" class="modal modal-pac">
+    <!-- Header -->
+    <div class="modal-header">
+        <h4>PacMan</h4>
+        <div class="header-botoes">
+            <a href="/">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a>
+                <img src="./img/botao-maximizar-disabled.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar"
+               onclick="retirar_pong(), retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+        <iframe src="https://funhtml5games.com?embed=pacman" style="width:342px;height:490px;border:none;"
+                frameborder="0" scrolling="no"></iframe>
+    </div>
+
+</div>
+
+<div id="chat" class="modal modal-chat">
+    <!-- Header -->
+    <div class="modal-header">
+        <h4>CHAT</h4>
+        <div class="header-botoes">
+            <a href="/">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a>
+                <img src="./img/botao-maximizar-disabled.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar"
+               onclick="retirar_pong(), retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+        <iframe src="https://www5.cbox.ws/box/?boxid=958451&boxtag=Hsb341" width="100%" height="450"
+                allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
+                scrolling="auto"></iframe>
+    </div>
+
+</div>
+
+<!-- MODAL - PAINT -->
+<div id="paint" class="modal">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img id="paint-logo" src="./img/Paint.png" alt="">
+            <h4>untitled - Paint</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#"><img src="./img/botao-minimizar.png" alt=""></a>
+            <a><img src="./img/botao-maximizar-disabled.png" alt=""></a>
+            <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()"><img
+                    src="./img/botao-fechar.png" alt=""></a>
+        </div>
+    </div>
+    <iframe src="paint/index.html" width="685" height="428"></iframe>
+</div>
+
+<!-- MODAL - CHROME -->
+<div id="chrome" class="modal">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img src="./img/Google_Chrome_icon.png" alt="">
+            <h4>Google Chrome</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./img/botao-maximizar.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+    <style>#dexscreener-embed {
+        position: relative;
+        width: 100%;
+        padding-bottom: 125%;
+    }
+
+    @media (min-width: 1400px) {
+        #dexscreener-embed {
+            padding-bottom: 65%;
         }
-    </script>
+    }
 
-    <script>
+    #dexscreener-embed iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 0;
+    }</style>
+    <div id="dexscreener-embed">
+        <iframe src="https://dexscreener.com/solana/DGtLxPTzrBbpmHGWPtYnqeVY64SR4xyXZ2qhUaEDp1RD?embed=1&loadChartSettings=0&trades=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"></iframe>
+    </div>
+</div>
 
-        const elementos = document.querySelectorAll("[draggable='true']");
-        const celulas_disponiveis = document.querySelectorAll(".celula-disponivel");
+<!-- MODAL - CALCULADORA -->
+<!-- TEMPLATE MODAL -->
+<div id="calculadora" class="modal">
+    <div class="modal-header">
+        <div style="width: 800px; display: flex; gap: 3px;">
+            <img id="calculadora-icone" src="./img/calc.ico" alt="">
+            <h4>Calculadora</h4>
+        </div>
+        <div class="header-botoes">
+            <a href="#">
+                <img src="./img/botao-minimizar.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./img/botao-maximizar-disabled.png" alt="">
+            </a>
+            <a href="#fechar" title="Fechar" class="fechar" onclick="retirar_elemento_barra_de_tarefas()">
+                <img src="./img/botao-fechar.png" alt="">
+            </a>
+        </div>
+    </div>
+    <iframe src="./calculadora/index.html" width="240" height="316"></iframe>
+</div>
+<script>
+    function abrirModal(imgSrc, fileName) {
+        // Update modal image
+        document.getElementById("modal-image").src = imgSrc;
 
-        elementos.forEach((elemento) => {
-            elemento.addEventListener("dragstart", comecar_arrastar);
-        })
-        celulas_disponiveis.forEach((celula) => {
-            celula.addEventListener("dragover", entrou_soltar);
-        })
-        celulas_disponiveis.forEach((celula) => {
-            celula.addEventListener("dragleave", saiu_soltar);
-        })
-        celulas_disponiveis.forEach((celula) => {
-            celula.addEventListener("dragend", soltou_elemento);
-        })
-        function soltou_elemento() {
-            this.classList.remove("celula-disponivel");
-            this.classList.add("celula-");
-            this.children[0].classList.remove("arrastando");
-            localStorage.setItem(this.children[0].id, this.id); //para salvar a config do desktop
-            // console.log(this.id);
-            // console.log(localStorage.getItem("calculadora-id"));
-            // console.log(this.children[0].id);
+        // Update modal title
+        document.getElementById("modal-title").innerText = fileName + " - Image Viewer";
+    }
+</script>
 
-            //alert(this.children[0].className);
+<script>
+
+    const elementos = document.querySelectorAll("[draggable='true']");
+    const celulas_disponiveis = document.querySelectorAll(".celula-disponivel");
+
+    elementos.forEach((elemento) => {
+        elemento.addEventListener("dragstart", comecar_arrastar);
+    })
+    celulas_disponiveis.forEach((celula) => {
+        celula.addEventListener("dragover", entrou_soltar);
+    })
+    celulas_disponiveis.forEach((celula) => {
+        celula.addEventListener("dragleave", saiu_soltar);
+    })
+    celulas_disponiveis.forEach((celula) => {
+        celula.addEventListener("dragend", soltou_elemento);
+    })
+
+    function soltou_elemento() {
+        this.classList.remove("celula-disponivel");
+        this.classList.add("celula-");
+        this.children[0].classList.remove("arrastando");
+        localStorage.setItem(this.children[0].id, this.id); //para salvar a config do desktop
+        // console.log(this.id);
+        // console.log(localStorage.getItem("calculadora-id"));
+        // console.log(this.children[0].id);
+
+        //alert(this.children[0].className);
+    }
+
+    function saiu_soltar() {
+        this.classList.add("celula-disponivel");
+        this.classList.remove("celula-");
+        //let name = document.getElementById("myLI").parentNode.nodeName;
+        this.classList.remove("arrastado");
+    }
+
+    function entrou_soltar() {
+
+        if (this.children[0] == undefined) {
+            this.classList.add("arrastado");
+
+            const elemento_arrastado = document.querySelector(".arrastando");
+
+            this.appendChild(elemento_arrastado);
         }
-        function saiu_soltar() {
-            this.classList.add("celula-disponivel");
-            this.classList.remove("celula-");
-            //let name = document.getElementById("myLI").parentNode.nodeName;
-            this.classList.remove("arrastado");
+    }
+
+    function comecar_arrastar() {
+        this.classList.add("arrastando");
+    }
+
+    function atualizaRelogio() {
+        var momentoAtual = new Date();
+
+        var vhora = momentoAtual.getHours();
+        var vminuto = momentoAtual.getMinutes();
+
+        if (vhora < 10) {
+            vhora = "0" + vhora;
         }
-        function entrou_soltar() {
-
-            if (this.children[0] == undefined) {
-                this.classList.add("arrastado");
-
-                const elemento_arrastado = document.querySelector(".arrastando");
-
-                this.appendChild(elemento_arrastado);
-            }
+        if (vminuto < 10) {
+            vminuto = "0" + vminuto;
         }
-        function comecar_arrastar() {
-            this.classList.add("arrastando");
+
+        horaFormat = vhora + ":" + vminuto;
+
+        document.getElementById("hora").innerHTML = horaFormat;
+
+        setTimeout("atualizaRelogio()", 60000);
+    }
+
+    function inserir_pong() {
+        // Check if the iframe is already created
+        if (document.getElementById("iframe-pong")) {
+            return; // already open, do nothing
         }
-        function atualizaRelogio() {
-            var momentoAtual = new Date();
 
-            var vhora = momentoAtual.getHours();
-            var vminuto = momentoAtual.getMinutes();
+        const iframe = document.createElement("iframe");
+        iframe.src = "jogo-Pong/index.html";
+        iframe.width = "600";
+        iframe.height = "400";
+        iframe.id = "iframe-pong";
+        document.getElementById("pong").appendChild(iframe);
+    }
 
-            if (vhora < 10) { vhora = "0" + vhora; }
-            if (vminuto < 10) { vminuto = "0" + vminuto; }
 
-            horaFormat = vhora + ":" + vminuto;
+    function retirar_pong() {
+        const iframe_pong = document.getElementById("iframe-pong");
+        iframe_pong.parentNode.removeChild(iframe_pong);
+    }
 
-            document.getElementById("hora").innerHTML = horaFormat;
-
-            setTimeout("atualizaRelogio()", 60000);
-        }
-        function inserir_pong() {
-            const iframe = document.createElement("iframe");
-            iframe.src = "jogo-Pong/index.html";
-            iframe.width = "600";
-            iframe.height = "400";
-            iframe.id = "iframe-pong";
-            document.getElementById("pong").appendChild(iframe);
-        }
-        function retirar_pong() {
-            const iframe_pong = document.getElementById("iframe-pong");
-            iframe_pong.parentNode.removeChild(iframe_pong);
-        }
-        function inserir_menu_iniciar() {
-            const body = document.body;
-            body.innerHTML += (`<div id="menu" class="modal" onblur="retirar_menu_iniciar()">
+    function inserir_menu_iniciar() {
+        const body = document.body;
+        body.innerHTML += (`<div id="menu" class="modal" onblur="retirar_menu_iniciar()">
         <div id="menu-header">
             <div id="usuario">
                 <img width="40" id="usuario-perfil" src="img/duck 1.png" alt="">
@@ -633,64 +934,94 @@
             </a>
         </div>
     </div>`);
-            const menu = document.getElementById("desktop");
-            menu.addEventListener("click", () => {
-                const menu_iniciar = document.getElementById("menu");
-                menu_iniciar.remove(menu_iniciar);
-                console.log("OPA");
-                window.location.href = "https://viniporto.github.io/clone-windows-xp/"; 
-            })
-        }
-        function adicionar_elemento_barra_de_tarefas(num) {
-            const botao = document.getElementById("menu-iniciar-id");
-            const caixa_barra = document.createElement("div");
-            caixa_barra.id = "elemento-barra-de-tarefas";
-            caixa_barra.classList.add("caixa-barra"); //div adicionada ao lado do botao iniciar, ja adiciona com a classe "caixa-barra"
+        const menu = document.getElementById("desktop");
+        menu.addEventListener("click", () => {
+            const menu_iniciar = document.getElementById("menu");
+            menu_iniciar.remove(menu_iniciar);
+            console.log("OPA");
+            window.location.href = "https://viniporto.github.io/clone-windows-xp/";
+        })
+    }
+
+    function adicionar_elemento_barra_de_tarefas(num) {
+        const botao = document.getElementById("menu-iniciar-id");
+        const caixa_barra = document.createElement("div");
+        caixa_barra.id = "elemento-barra-de-tarefas";
+        caixa_barra.classList.add("caixa-barra"); //div adicionada ao lado do botao iniciar, ja adiciona com a classe "caixa-barra"
 
 
-            if (num == 1) { //variavel "num" vem por parametro, nos links dos programas ele chama essa função passando por parametro um numero, cada um passa um numero diferente, ai de acordo com o numero sabemos qual programa abriu, ai da pra saber se coloca o icone do paint, pong, etc
-                caixa_barra.innerHTML += `<img src="./img/monitor.ico"><p>Meu Computador</p>`
-            } else if (num == 2) {
-                caixa_barra.innerHTML += `<img src="./img/calc.ico"><p>Calculadora</p>`
-            } else if (num == 3) {
-                caixa_barra.innerHTML += `<img src="./img/JPG.png"><p>Visualizador de imagens</p>`
-            } else if (num == 4) {
-                caixa_barra.innerHTML += `<img src="./img/pong-logo.png"><p>Pong</p>`
-            } else if (num == 5) {
-                caixa_barra.innerHTML += `<img src="./img/Google_Chrome_icon.png"><p>Chrome</p>`;
-            } else if (num == 6) {
-                caixa_barra.innerHTML += `<img src="./img/Paint.png"><p>Paint</p>`;
-            }
-
-            botao.after(caixa_barra); //este método insere a caixinha depois do botao INICIAR da barra de tarefas
-        }
-        function retirar_elemento_barra_de_tarefas() {
-            const elemento_barra_de_tarefas = document.getElementById("elemento-barra-de-tarefas");
-            elemento_barra_de_tarefas.remove(elemento_barra_de_tarefas);
+        if (num == 1) { //variavel "num" vem por parametro, nos links dos programas ele chama essa função passando por parametro um numero, cada um passa um numero diferente, ai de acordo com o numero sabemos qual programa abriu, ai da pra saber se coloca o icone do paint, pong, etc
+            caixa_barra.innerHTML += `<img src="./img/monitor.ico"><p>Memes</p>`
+        } else if (num == 2) {
+            caixa_barra.innerHTML += `<img src="./img/calc.ico"><p>Calculator</p>`
+        } else if (num == 3) {
+            caixa_barra.innerHTML += `<img src="./img/JPG.png"><p>Image Viewer</p>`
+        } else if (num == 4) {
+            caixa_barra.innerHTML += `<img src="./img/pong-logo.png"><p>Pong</p>`
+        } else if (num == 5) {
+            caixa_barra.innerHTML += `<img src="./img/Google_Chrome_icon.png"><p>Chrome</p>`;
+        } else if (num == 6) {
+            caixa_barra.innerHTML += `<img src="./img/Paint.png"><p>Paint</p>`;
         }
 
-        //para carregar a área de trabalho no estado em que se encontrava anteriormente
-        window.onload = () => {
-            if (localStorage.length == 0) {
-                //inicializar localização dos icones
-                localStorage.setItem("meu-computador-id", 1);
-                localStorage.setItem("calculadora-id", 14);
-                localStorage.setItem("gatos-id", 27);
-                localStorage.setItem("pong-id", 40);
-                localStorage.setItem("chrome-id", 53);
-                localStorage.setItem("paint-id", 66);
-            }
-            Object.keys(localStorage).forEach((key) => {
-                const elemento_desktop = document.getElementById(`${key}`);
-                console.log(elemento_desktop);
-                const div_elemento = elemento_desktop.parentNode;
-                div_elemento.removeChild(elemento_desktop);
-                const nova_div_elemento = document.getElementById(`${localStorage.getItem(key)}`);
-                nova_div_elemento.appendChild(elemento_desktop);
-            })
-        }   
-    </script>
-    <script src="api-gato.js"></script>
+        botao.after(caixa_barra); //este método insere a caixinha depois do botao INICIAR da barra de tarefas
+    }
+
+    function retirar_elemento_barra_de_tarefas() {
+        const elemento_barra_de_tarefas = document.getElementById("elemento-barra-de-tarefas");
+        elemento_barra_de_tarefas.remove(elemento_barra_de_tarefas);
+    }
+
+    //para carregar a área de trabalho no estado em que se encontrava anteriormente
+    window.onload = () => {
+        if (localStorage.length == 0) {
+            //inicializar localização dos icones
+            localStorage.setItem("meu-computador-id", 1);
+            localStorage.setItem("calculadora-id", 14);
+            localStorage.setItem("gatos-id", 27);
+            localStorage.setItem("pong-id", 40);
+            localStorage.setItem("chrome-id", 53);
+            localStorage.setItem("paint-id", 66);
+        }
+        Object.keys(localStorage).forEach((key) => {
+            const elemento_desktop = document.getElementById(`${key}`);
+            console.log(elemento_desktop);
+            const div_elemento = elemento_desktop.parentNode;
+            div_elemento.removeChild(elemento_desktop);
+            const nova_div_elemento = document.getElementById(`${localStorage.getItem(key)}`);
+            nova_div_elemento.appendChild(elemento_desktop);
+        })
+    }
+</script>
+<script>
+    function openVideoModal(src, title = 'Video') {
+        const modal  = document.getElementById('modal-video');
+        const video  = document.getElementById('modal-video-el');
+        const source = document.getElementById('modal-video-source');
+        const titleEl = document.getElementById('video-title');
+
+        source.src = src;
+        video.load();            // ensure new source is applied
+        titleEl.textContent = `${title} - Video Player`;
+
+        // if your modals open via hash targets like the others:
+        location.hash = 'modal-video';
+
+        // optional: add to taskbar like your other apps
+        // adicionar_elemento_barra_de_tarefas(7);
+    }
+
+    function closeVideoModal() {
+        const video = document.getElementById('modal-video-el');
+        video.pause(); // stop playback when closing
+        // keep your existing taskbar removal
+        retirar_elemento_barra_de_tarefas();
+    }
+
+
+</script>
+
+<script src="api-gato.js"></script>
 </body>
 
 </html>
