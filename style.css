@@ -609,12 +609,12 @@ body .modal-header {
 
 .meu-pc-topicos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  grid-template-columns: repeat(4, 1fr); /* 3 equal-width columns */
 }
 
 .meu-pc-itens {
   display: flex;
-  margin: 3.5vh;
+  margin: 3vh;
   align-items: center;
   gap: 0.5vw;
   cursor: pointer;

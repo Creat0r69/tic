@@ -483,6 +483,24 @@
                         </a>
                         <p>michi.mp4</p>
                     </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-video" onclick="openVideoModal('./img/11.mp4', 'Mog.mp4')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>mog.mp4</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-video" onclick="openVideoModal('./img/11.mp4', 'Retardio.mp4')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>Retardio.mp4</p>
+                    </div>
+                    <div class="meu-pc-itens">
+                        <a href="#modal-video" onclick="openVideoModal('./img/13.mp4', 'UFD.mp4')">
+                            <img class="imagem-grande" src="./img/mp4.png" alt="">
+                        </a>
+                        <p>UFD.mp4</p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -508,7 +526,7 @@
         </div>
     </div>
     <div class="img-gato">
-        <img src="/img/2.png" alt="" id="modal-image">
+        <img style="height:90% " src="/img/2.png" alt="" id="modal-image">
     </div>
 </div>
 <div id="modal-video" class="modal" role="dialog" aria-labelledby="video-title" aria-hidden="true">
@@ -1037,28 +1055,27 @@
 </script>
 <script>
     function openVideoModal(src, title = 'Video') {
-        const modal  = document.getElementById('modal-video');
         const video  = document.getElementById('modal-video-el');
         const source = document.getElementById('modal-video-source');
         const titleEl = document.getElementById('video-title');
 
         source.src = src;
-        video.load();            // ensure new source is applied
+        video.load();             // reload with new source
         titleEl.textContent = `${title} - Video Player`;
+        location.hash = 'modal-video'; // open modal
 
-        // if your modals open via hash targets like the others:
-        location.hash = 'modal-video';
-
-        // optional: add to taskbar like your other apps
-        // adicionar_elemento_barra_de_tarefas(7);
+        // autoplay when ready
+        video.play().catch(err => {
+            console.log("Autoplay blocked by browser:", err);
+        });
     }
 
     function closeVideoModal() {
         const video = document.getElementById('modal-video-el');
-        video.pause(); // stop playback when closing
-        // keep your existing taskbar removal
+        video.pause();
         retirar_elemento_barra_de_tarefas();
     }
+
 
 
 </script>
